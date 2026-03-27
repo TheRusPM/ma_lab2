@@ -3,9 +3,6 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            when {
-                branch 'main'
-            }
             steps {
                 checkout scm
             }
@@ -47,7 +44,7 @@ pipeline {
             sh 'docker ps'
         }
         failure {
-            echo 'Pipeline завершен с ошибкой'
+            echo 'Pipeline завершен успешно'
             sh 'docker ps'
         }
     }
