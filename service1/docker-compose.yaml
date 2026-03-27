@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  service1:
+    build: .
+    container_name: svc_service1
+    environment:
+      - SERVICE_NAME=Service-1
+      - PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - lab2-net
+    restart: unless-stopped
+
+networks:
+  lab2-net:
+    external: true
